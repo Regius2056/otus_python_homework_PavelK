@@ -5,7 +5,7 @@ from src.figure import Figure
 class Circle(Figure):
 
     def __init__(self, radius):
-        if not isinstance(radius, int):
+        if isinstance(radius, str):
             raise ValueError('Only numbers are allowed')
         if radius <= 0:
             raise ValueError(f'Radius of Circle should be above 0, actual is {radius}')

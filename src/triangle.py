@@ -4,13 +4,13 @@ from src.figure import Figure
 
 class Triangle(Figure):
     def __init__(self, side_a, side_b, side_c):
-        sides = sorted((side_a, side_b, side_c))
-        if sides[0] + sides[1] <= sides[2]:
-            raise ValueError(f'The figure with sides {side_a}, {side_b}, {side_c} is not Triangle')
-        if not isinstance(side_a, int):
+        if isinstance(side_a, str) or isinstance(side_b, str) or isinstance(side_c, str):
             raise ValueError('Only numbers are allowed')
         if side_a <=0 or side_b <= 0 or side_c <= 0:
             raise ValueError(f'Object of class Triangle must have sides above zero, actual is {side_a}/{side_b}/{side_c}')
+        sides = sorted((side_a, side_b, side_c))
+        if sides[0] + sides[1] <= sides[2]:
+            raise ValueError(f'The figure with sides {side_a}, {side_b}, {side_c} is not Triangle')
 
         self.side_a = side_a
         self.side_b = side_b

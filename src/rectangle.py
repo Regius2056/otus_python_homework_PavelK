@@ -3,9 +3,9 @@ from src.figure import Figure
 class Rectangle(Figure):
 
     def __init__(self, side_a, side_b):
-        if not isinstance(side_a, int) or not isinstance(side_b, int):
+        if isinstance(side_a, str) or isinstance(side_b, str) :
             raise ValueError('Only numbers are allowed')
-        if side_a <=0:
+        if side_a <=0 or side_b <= 0:
             raise ValueError(f'Object of class Rectangle must have sides above zero, actual is {side_a}/{side_b}')
 
         self.side_a = side_a
